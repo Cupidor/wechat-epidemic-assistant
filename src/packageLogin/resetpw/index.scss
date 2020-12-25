@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+}
+.steps {
+  margin-top: 50px;
+}
+.form {
+  margin-top: 150px;
+}
+.next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 284px;
+  height: 70px;
+  margin: auto;
+  margin-top: 150px;
+  color: #ffffff;
+  font-size: 32px;
+  background-color: #2782ed;
+  border-radius: 10px;
+}
+.buttons{
+  width: calc(100% - 60px);
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

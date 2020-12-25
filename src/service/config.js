@@ -1,0 +1,10 @@
+//export const base = "https://api.njgn.com";
+//export const wsUrl = "wss://api.njgn.com/ngnws";
+//export const waterId = 268;
+export const base = "https://api.njgn.com:9043";
+export const wsUrl = "wss://api.njgn.com:9043/ngnws";
+export const waterId = 501;
+export const systemId = "335383259649802240";
+export const imageUrl = "https://cloud.njgn.com/static/wechat/images";
+export const wsGZMUrl = "https://cloud.njgn.com/njskygzm/#/WeChat/Draw";
+export const version = "1.0.0";

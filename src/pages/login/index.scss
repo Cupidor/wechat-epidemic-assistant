@@ -1,0 +1,104 @@
+$project-name: #aaaaaa;
+$login-color: #333333;
+$border-color: #eeeeee;
+$desc-color: #555555;
+$white-color: #ffffff;
+$button-color: #2a8cff;
+$forget-color: #8d8d8d;
+$phone-login: #0063d7;
+@mixin fontStyle($color, $font-size, $font-weight) {
+  color: $color;
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+.login {
+  height: 15vh;
+  width: 100%;
+}
+.login-name {
+  @include fontStyle($login-color, 35px, normal);
+  margin-left: 30px;
+}
+.login-password {
+  @extend .login-name;
+}
+.login-icon {
+  width: 33px;
+  height: 34px;
+  vertical-align: bottom;
+  margin-top: 5px;
+}
+.container-line {
+  height: 80px;
+  width: calc(100% - 60px);
+  margin: 25px 30px 25px 30px;
+  display: flex;
+  align-items: center;
+}
+.container-input{
+  width: calc(100% - 40px);
+}
+.login-forget {
+  float: right;
+  margin-right: 30px;
+  @include fontStyle($forget-color, 30px, normal);
+}
+.login-button {
+  margin: 100px 30px 0 30px;
+  background-color: $button-color;
+  @include fontStyle($white-color, 37px, normal);
+}
+.container-text {
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}
+.container-info {
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+}
+.container-phone {
+  @include fontStyle($phone-login, 30px, normal);
+}
+.container-company {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  @include fontStyle($forget-color, 20px, normal);
+}
+.login-send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 60px;
+  margin-left: 10px;
+  background-color: #ffffff;
+  @include fontStyle($phone-login, 28px, normal);
+}
+.login-zhanghao {
+  margin-top: 40px;
+}
+.container-iam{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 40px 0px 40px;
+}
+.login-module{
+  margin-top: 150px;
+}
+.login-image{
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2a8cff;
+}
+.login-title{
+  font-size: 50px;
+  color: #ffffff;
+}
