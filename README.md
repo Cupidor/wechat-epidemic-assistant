@@ -1,0 +1,2 @@
+# wechat_epidemic_assistant
+基于微信小程序的疫情信息助手
