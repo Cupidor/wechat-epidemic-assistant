@@ -25,22 +25,29 @@ class App extends Component {
       {
         root: "packageLogin",
         pages: [
-          // 选择工程
-          "project/index",
-          // 重置密码
-          "resetpw/index",
+          // 注册
+          "register/index",
           // 我的
           "mine/mine",
-          // 关于我们（我的子页面）
+          // 关于我们
           "aboutus/index",
-          // 个人信息（我的子页面）
-          "personalinfo/index",
-          // 编辑个人信息（个人信息子页面）
-          "editinfo/index",
-          // 编辑备用手机号（个人信息子页面）
-          "editphone/index",
-          // 物流查询（首页实用工具）
-          "express/index",
+        ],
+      },
+      {
+        root: "packageModule",
+        pages: [
+          // 各省疫情
+          "EpidemicCount",
+          // 病毒知识
+          "VirusKnowledge",
+          // 健康科普
+          "HealthProtection",
+          // 科研进度
+          "ResearchProgress",
+          // 战疫故事
+          "PlagueStory",
+          // 科学辟谣
+          "RefutesRumors",
         ],
       },
     ],

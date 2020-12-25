@@ -1,0 +1,46 @@
+.rumor {
+  position: relative;
+  margin: 35px 25px;
+  padding-bottom: 20px;
+  border: 1px solid #aaaaaa;
+  background-color: #2834b9;
+  border-radius: 15px;
+}
+.rumor-img {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 180px;
+  height: 180px;
+}
+.rumor-title {
+  color: #ffffff;
+}
+.rumor-content {
+  margin: 20px;
+  padding: 5px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  color: #000000;
+}
+.progress-container {
+  padding: 20px;
+}
+.progress-timeline {
+  width: calc(100% - 40px);
+}
+.table-content {
+  display: flex;
+  width: 100vw;
+}
+.table-line {
+  height: 90px;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px #dcdcdc solid;
+  color: #333333;
+  font-size: 28px;
+  flex-wrap: wrap;
+}

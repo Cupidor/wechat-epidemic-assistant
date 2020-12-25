@@ -1,12 +1,10 @@
 import Taro, { Component } from "@tarojs/taro";
-import { View, Image, Text, Button } from "@tarojs/components";
-import { AtButton, AtIcon, AtMessage, AtInput } from "taro-ui";
+import { View, Image } from "@tarojs/components";
+import { AtButton, AtMessage, AtInput } from "taro-ui";
 import "./index.scss";
 import api from "../../service/api";
-import { showMessage, getLength } from "../../utils/common";
-import { md5 } from "../../utils/md5.js";
 import cookies from "weapp-cookie";
-import { base, systemId, imageUrl } from "../../service/config";
+import { base } from "../../service/config";
 import LoginName from "../../assets/images/icon_name.png";
 import LoginPass from "../../assets/images/icon_screct.png";
 
@@ -19,39 +17,17 @@ export default class Index extends Component {
     super();
     this.state = {
       name: "",
-      organ: "",
       password: "",
-      passorgan: "",
-      user: "",
-      login: true,
-      phonenumber: "",
-      phoneverify: "",
-      phonesend: "发送验证码",
-      countdown: 60,
-      disabled: false,
-      organizationId: "",
-      iam: true,
-      year: new Date().getFullYear(),
     };
   }
 
   componentWillMount() {
     let username = cookies.get("username", base);
     let password = cookies.get("password", base);
-    let organ = cookies.get("organ", base);
-    let userorgan = cookies.get("userorgan", base);
-    let passorgan = cookies.get("passorgan", base);
     if (username && password) {
       this.setState({
         name: username,
         password: password,
-      });
-    }
-    if (organ && userorgan && passorgan) {
-      this.setState({
-        organ: organ,
-        user: userorgan,
-        passorgan: passorgan,
       });
     }
   }
@@ -67,41 +43,6 @@ export default class Index extends Component {
   handlePassChange(password) {
     this.setState({
       password,
-    });
-  }
-
-  // 监听机构别名
-  handleOrganChange(organ) {
-    this.setState({
-      organ,
-    });
-  }
-
-  // 监听用户名
-  handleUserChange(user) {
-    this.setState({
-      user,
-    });
-  }
-
-  // 监听机构号密码
-  handlePassOrganChange(passorgan) {
-    this.setState({
-      passorgan,
-    });
-  }
-
-  // 监听手机号码
-  handlePNChange(phonenumber) {
-    this.setState({
-      phonenumber,
-    });
-  }
-
-  // 监听短信验证码
-  handlePVChange(phoneverify) {
-    this.setState({
-      phoneverify,
     });
   }
 
@@ -161,10 +102,10 @@ export default class Index extends Component {
     }, 1500);
   };
 
-  // 忘记密码
+  // 注册
   onForgetPassWord = (e) => {
     Taro.navigateTo({
-      url: `/packageLogin/resetpw/index`,
+      url: `/packageLogin/register/index`,
     });
   };
 

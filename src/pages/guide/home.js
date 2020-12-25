@@ -1,7 +1,6 @@
 import Taro, { Component } from "@tarojs/taro";
 import { View, Image, Swiper, SwiperItem } from "@tarojs/components";
 import "./index.scss";
-import { systemId, imageUrl, base } from "../../service/config";
 import { AtGrid, AtMessage, AtIcon } from "taro-ui";
 import MyTabBar from "./components/tabBar";
 import api from "../../service/api";
@@ -30,23 +29,32 @@ export default class Index extends Component {
   // 选择工具
   handleToolClick = (item, index) => {
     switch (item.value) {
-      case "产品查询":
-        Taro.scanCode({
-          success: (res) => {
-            this.getProductDetail(res.result);
-          },
-          fail: (res) => {
-            Taro.atMessage({
-              message: "扫描失败",
-              type: "warning",
-            });
-          },
+      case "病毒知识":
+        Taro.navigateTo({
+          url: `/packageModule/VirusKnowledge`,
         });
         break;
-      case "物流查询":
+      case "健康科普":
         Taro.navigateTo({
-          url: `/packageLogin/express/index`,
+          url: `/packageModule/HealthProtection`,
         });
+        break;
+      case "科研进度":
+        Taro.navigateTo({
+          url: `/packageModule/ResearchProgress`,
+        });
+        break;
+      case "战疫故事":
+        Taro.navigateTo({
+          url: `/packageModule/PlagueStory`,
+        });
+        break;
+      case "科学辟谣":
+        Taro.navigateTo({
+          url: `/packageModule/RefutesRumors`,
+        });
+        break;
+      case "病毒知识":
         break;
       default:
         Taro.showToast({
@@ -55,6 +63,13 @@ export default class Index extends Component {
         });
         break;
     }
+  };
+
+  // 查看各省疫情
+  onShowDetail = () => {
+    Taro.navigateTo({
+      url: `/packageModule/EpidemicCount`,
+    });
   };
 
   render() {
@@ -78,7 +93,11 @@ export default class Index extends Component {
         </View>
         <View className="now-content">
           <View className="at-article__info">截至 2020-12-24 17:20:59</View>
-          <View className="at-article__info" style={{ color: "#373435" }}>
+          <View
+            className="at-article__info"
+            style={{ color: "#373435" }}
+            onClick={this.onShowDetail}
+          >
             各省疫情
             <AtIcon value="chevron-right" size="22" color="#373435"></AtIcon>
           </View>
