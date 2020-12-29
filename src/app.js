@@ -38,14 +38,10 @@ class App extends Component {
         pages: [
           // 各省疫情
           "EpidemicCount",
-          // 病毒知识
+          // 病毒知识,健康科普
           "VirusKnowledge",
-          // 健康科普
-          "HealthProtection",
-          // 科研进度
+          // 科研进度,战疫故事
           "ResearchProgress",
-          // 战疫故事
-          "PlagueStory",
           // 科学辟谣
           "RefutesRumors",
         ],

@@ -31,27 +31,27 @@ export default class Index extends Component {
     switch (item.value) {
       case "病毒知识":
         Taro.navigateTo({
-          url: `/packageModule/VirusKnowledge`,
+          url: `/packageModule/VirusKnowledge?type=${item.value}`,
         });
         break;
       case "健康科普":
         Taro.navigateTo({
-          url: `/packageModule/HealthProtection`,
+          url: `/packageModule/VirusKnowledge?type=${item.value}`,
         });
         break;
       case "科研进度":
         Taro.navigateTo({
-          url: `/packageModule/ResearchProgress`,
+          url: `/packageModule/ResearchProgress?type=${item.value}`,
         });
         break;
       case "战疫故事":
         Taro.navigateTo({
-          url: `/packageModule/PlagueStory`,
+          url: `/packageModule/ResearchProgress?type=${item.value}`,
         });
         break;
       case "科学辟谣":
         Taro.navigateTo({
-          url: `/packageModule/RefutesRumors`,
+          url: `/packageModule/RefutesRumors?type=${item.value}`,
         });
         break;
       case "病毒知识":

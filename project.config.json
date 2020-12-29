@@ -4,7 +4,7 @@
 	"description": "test",
 	"appid": "wx4227909b19687570",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": false,
 		"postcss": false,
 		"preloadBackgroundData": false,

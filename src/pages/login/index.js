@@ -64,26 +64,23 @@ export default class Index extends Component {
       });
       return;
     }
-    this.loginSuccess();
-    /*let parma = {
+    let parma = {
       username: username,
-      password: md5(password.trim()),
-      systemId: systemId,
-      durationMinutes: 60 * 24 * 365,
+      password: password,
     };
     Taro.showLoading({
       title: "loading",
     });
-    const res = await api.post("/common_api/login/super_login_system", parma);
-    if (res.data.op === true) {
-
+    const res = await api.post("/login", parma);
+    if (res.data.op === "success") {
+      this.loginSuccess();
     } else {
       Taro.hideLoading();
       Taro.atMessage({
         message: res.data.message,
         type: "error",
       });
-    }*/
+    }
   };
 
   // 登录成功
