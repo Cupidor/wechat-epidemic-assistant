@@ -12,37 +12,25 @@ export default class Index extends Component {
   constructor() {
     super();
     this.state = {
-      list: [
-        {
-          province: "湖北",
-          diagnosed: 67794,
-          suspected: 0,
-          cured: 54278,
-          died: 3085,
-        },
-        {
-          province: "广东",
-          diagnosed: 1357,
-          suspected: 0,
-          cured: 1303,
-          died: 8,
-        },
-        {
-          province: "河南",
-          diagnosed: 1273,
-          suspected: 0,
-          cured: 1250,
-          died: 22,
-        },
-        {
-          province: "浙江",
-          diagnosed: 1231,
-          suspected: 0,
-          cured: 1211,
-          died: 1,
-        },
-      ],
+      list: [],
     };
+  }
+
+  componentDidMount() {
+    let data = JSON.parse(this.$router.params.data);
+    let list = [];
+    for (let item of data) {
+      let obj = Object.create(null);
+      obj.city = item.name;
+      obj.confirm = item.total.confirm;
+      obj.suspect = item.total.suspect;
+      obj.heal = item.total.heal;
+      obj.dead = item.total.dead;
+      list.push(obj);
+    }
+    this.setState({
+      list,
+    });
   }
 
   render() {
@@ -50,11 +38,11 @@ export default class Index extends Component {
     let content = list.map((item, index) => {
       return (
         <View key={index} className="table-content">
-          <View className="table-line">{item.province}</View>
-          <View className="table-line">{item.diagnosed}</View>
-          <View className="table-line">{item.suspected}</View>
-          <View className="table-line">{item.cured}</View>
-          <View className="table-line">{item.died}</View>
+          <View className="table-line">{item.city}</View>
+          <View className="table-line">{item.confirm}</View>
+          <View className="table-line">{item.suspect}</View>
+          <View className="table-line">{item.heal}</View>
+          <View className="table-line">{item.dead}</View>
         </View>
       );
     });
