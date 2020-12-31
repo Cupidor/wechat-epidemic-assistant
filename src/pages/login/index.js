@@ -142,9 +142,9 @@ export default class Index extends Component {
             </View>
           </View>
         </View>
-        <View class="login-forget" onClick={this.onForgetPassWord.bind(this)}>
+        {/*<View class="login-forget" onClick={this.onForgetPassWord.bind(this)}>
           立即注册
-        </View>
+         </View>*/}
         <AtButton type="primary" className="login-button" onClick={this.login}>
           登录
         </AtButton>
